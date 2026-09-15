@@ -5,117 +5,314 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-        content="Rayven Gabriel G. Vasquez - BS Information Technology Student Portfolio">
-
-    <title>Rayven Gabriel G. Vasquez | Portfolio</title>
+    <title>Rayven Gabriel Vasquez | Mobile Portfolio</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- ================= HEADER ================= -->
+    <!-- =========================================
+         HEADER / NAVIGATION
+         ========================================= -->
 
-    <header class="site-header">
+    <header class="header">
 
-        <a href="#home" class="brand">
-            <span>RGV</span>
-            <small>PORTFOLIO</small>
-        </a>
+        <div class="container nav-container">
 
-        <!-- Hamburger Button -->
-        <button class="menu-toggle" aria-label="Open navigation menu">
-            ☰
-        </button>
+            <!-- Logo / Name -->
+            <a href="#home" class="logo">
+                <span class="logo-icon">
+                    <i class="fas fa-code"></i>
+                </span>
 
-        <!-- Navigation -->
-        <nav id="nav">
+                <span class="logo-text">
+                    Rayven<span>.</span>
+                </span>
+            </a>
 
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#education">Education</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
 
-        </nav>
+            <!-- Hamburger Button -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Open Navigation Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+
+            <!-- Navigation Menu -->
+            <nav class="nav-menu" id="navMenu">
+
+                <a href="#home" class="active">Home</a>
+
+                <a href="#about">About</a>
+
+                <a href="#education">Education</a>
+
+                <a href="#skills">Skills</a>
+
+                <a href="#projects">Projects</a>
+
+                <a href="#contact">Contact</a>
+
+            </nav>
+
+        </div>
 
     </header>
 
 
-    <!-- ================= MAIN CONTENT ================= -->
+    <!-- =========================================
+         MAIN CONTENT
+         ========================================= -->
 
     <main>
 
 
-        <!-- ================= HERO SECTION ================= -->
+        <!-- =====================================
+             HOME SECTION
+             ===================================== -->
 
-        <section id="home" class="hero">
+        <section id="home" class="hero-section">
 
-            <div class="hero-copy">
+            <div class="container hero-container">
 
-                <p class="eyebrow">
-                    BSIT STUDENT · 1ST YEAR
-                </p>
+                <!-- Profile Image -->
+                <div class="hero-image-wrapper">
 
-                <p class="motto">
-                    "Curiosity leads to Capability."
-                </p>
+                    <div class="profile-frame">
 
-                <h1>
-                    Hi, I'm<br>
-                    <span>Rayven Gabriel G. Vasquez</span>
-                </h1>
+                        <img src="images/profile.jpg"
+                             alt="Rayven Gabriel Vasquez Profile Picture"
+                             class="profile-image">
 
-                <p class="lead">
-                    An aspiring software developer building practical skills
-                    through programming, design, and continuous learning.
-                </p>
+                    </div>
 
-                <p class="developer-goal">
-                    Inspired to become a software developer who creates useful,
-                    reliable, and meaningful digital solutions.
-                </p>
+                    <div class="gold-circle circle-one"></div>
+                    <div class="gold-circle circle-two"></div>
 
-                <div class="actions">
+                </div>
 
-                    <a href="#projects" class="btn btn-gold">
-                        Explore My Work
-                    </a>
 
-                    <a href="#contact" class="text-link">
-                        Let's Connect →
-                    </a>
+                <!-- Hero Text -->
+                <div class="hero-content">
+
+                    <p class="hero-introduction">
+                        Hello, I'm
+                    </p>
+
+                    <h1>
+                        Rayven Gabriel<br>
+                        <span>Vasquez</span>
+                    </h1>
+
+                    <h2>
+                        BS Information Technology Student
+                    </h2>
+
+                    <p class="hero-description">
+                        An aspiring software developer passionate about
+                        technology, programming, and creating meaningful
+                        digital experiences.
+                    </p>
+
+
+                    <!-- Motto -->
+                    <div class="motto-box">
+
+                        <i class="fas fa-quote-left"></i>
+
+                        <p>
+                            Curiosity leads to Capability.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Buttons -->
+                    <div class="hero-buttons">
+
+                        <a href="#projects" class="btn btn-primary">
+                            <i class="fas fa-laptop-code"></i>
+                            View My Work
+                        </a>
+
+                        <a href="#contact" class="btn btn-outline">
+                            <i class="fas fa-envelope"></i>
+                            Contact Me
+                        </a>
+
+                    </div>
+
+
+                    <!-- Social Media Links -->
+                    <div class="social-links">
+
+                        <a href="https://www.facebook.com/"
+                           target="_blank"
+                           aria-label="Facebook">
+
+                            <i class="fab fa-facebook-f"></i>
+
+                        </a>
+
+
+                        <a href="https://www.instagram.com/"
+                           target="_blank"
+                           aria-label="Instagram">
+
+                            <i class="fab fa-instagram"></i>
+
+                        </a>
+
+
+                        <a href="https://www.linkedin.com/"
+                           target="_blank"
+                           aria-label="LinkedIn">
+
+                            <i class="fab fa-linkedin-in"></i>
+
+                        </a>
+
+                    </div>
 
                 </div>
 
             </div>
 
+        </section>
 
-            <!-- Profile Image -->
 
-            <div class="portrait-wrap">
+        <!-- =====================================
+             SCROLL INDICATOR
+             ===================================== -->
 
-                <div class="portrait-ring">
+        <div class="scroll-indicator">
 
-                    <img src="images/profile.jpg"
-                        alt="Rayven Gabriel G. Vasquez Profile Photo">
+            <span>Scroll to explore</span>
+
+            <i class="fas fa-arrow-down"></i>
+
+        </div>
+
+
+        <!-- =====================================
+             ABOUT SECTION STARTS IN PART 1B
+             ===================================== -->
+
+
+    
+
+        <!-- =========================================
+             ABOUT ME SECTION
+             ========================================= -->
+
+        <section id="about" class="about-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="section-label">GET TO KNOW ME</p>
+
+                    <h2>About <span>Me</span></h2>
+
+                    <div class="heading-line"></div>
 
                 </div>
 
-                <div class="portrait-tag">
-                    CREATIVE<br>
-                    <b>TECH BUILDER</b>
+
+                <div class="about-grid">
+
+                    <!-- About Text -->
+                    <div class="about-content">
+
+                        <h3>
+                            Passionate About Technology
+                        </h3>
+
+                        <p>
+                            Hello! I'm Rayven Gabriel Vasquez, a first-year
+                            BS Information Technology student at De La Salle
+                            John Bosco College.
+                        </p>
+
+                        <p>
+                            I am passionate about learning technology,
+                            programming, web development, and software
+                            development. I believe that curiosity is the
+                            beginning of growth and every new skill is an
+                            opportunity to improve.
+                        </p>
+
+                        <p>
+                            My goal is to continuously develop my knowledge
+                            and skills and someday become a professional
+                            Software Developer.
+                        </p>
+
+
+                        <div class="about-details">
+
+                            <div class="detail-item">
+
+                                <i class="fas fa-user-graduate"></i>
+
+                                <div>
+                                    <span>Education</span>
+                                    <strong>BS Information Technology</strong>
+                                </div>
+
+                            </div>
+
+
+                            <div class="detail-item">
+
+                                <i class="fas fa-code"></i>
+
+                                <div>
+                                    <span>Career Goal</span>
+                                    <strong>Aspiring Software Developer</strong>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- About Highlight Card -->
+                    <div class="about-card">
+
+                        <div class="about-card-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+
+                        <h3>My Vision</h3>
+
+                        <p>
+                            To grow as a technology professional who creates
+                            useful, innovative, and meaningful software
+                            solutions.
+                        </p>
+
+                        <div class="about-card-line"></div>
+
+                        <p class="highlight-text">
+                            Learn. Build. Improve.
+                        </p>
+
+                    </div>
+
                 </div>
 
             </div>
@@ -123,455 +320,739 @@
         </section>
 
 
-        <!-- ================= ABOUT SECTION ================= -->
+        <!-- =========================================
+             EDUCATION SECTION
+             ========================================= -->
 
-        <section id="about" class="section about">
+        <section id="education" class="education-section">
 
-            <div class="section-label">
-                01 / ABOUT ME
-            </div>
+            <div class="container">
 
-            <div>
+                <div class="section-heading">
 
-                <h2>
-                    Learning today.<br>
-                    <span>Building tomorrow.</span>
-                </h2>
+                    <p class="section-label">MY ACADEMIC JOURNEY</p>
 
-                <p>
-                    I am a motivated Information Technology student at
-                    De La Salle John Bosco College. I enjoy turning ideas
-                    into organized, useful digital experiences and improving
-                    my skills one project at a time.
-                </p>
+                    <h2>Education <span>Timeline</span></h2>
 
-                <p>
-                    My interests include software development, responsive
-                    web design, logical problem-solving, and understanding
-                    how technology can solve real-world problems.
-                </p>
+                    <div class="heading-line"></div>
 
-            </div>
+                </div>
 
-        </section>
 
+                <div class="timeline">
 
-        <!-- ================= EDUCATION SECTION ================= -->
 
-        <section id="education" class="section">
+                    <!-- Elementary -->
+                    <div class="timeline-item">
 
-            <div class="section-label">
-                02 / EDUCATION
-            </div>
+                        <div class="timeline-dot">
+                            <i class="fas fa-school"></i>
+                        </div>
 
-            <h2>
-                My academic journey
-            </h2>
+                        <div class="timeline-card">
 
+                            <span class="timeline-year">
+                                2011 – 2018
+                            </span>
 
-            <div class="timeline">
+                            <h3>Mangagoy Hilltop Elementary</h3>
 
-                <article>
+                            <p>
+                                Elementary Education
+                            </p>
 
-                    <span>2011 — 2018</span>
+                        </div>
 
-                    <h3>
-                        Elementary Education
-                    </h3>
+                    </div>
 
-                    <p>
-                        Mangagoy Hilltop Elementary School
-                    </p>
 
-                </article>
+                    <!-- Junior High School -->
+                    <div class="timeline-item">
 
+                        <div class="timeline-dot">
+                            <i class="fas fa-book"></i>
+                        </div>
 
-                <article>
+                        <div class="timeline-card">
 
-                    <span>2018 — 2023</span>
+                            <span class="timeline-year">
+                                2018 – 2023
+                            </span>
 
-                    <h3>
-                        Junior High School
-                    </h3>
+                            <h3>
+                                De La Salle John Bosco College
+                            </h3>
 
-                    <p>
-                        De La Salle John Bosco College
-                    </p>
+                            <p>
+                                Junior High School
+                            </p>
 
-                </article>
+                        </div>
 
+                    </div>
 
-                <article>
 
-                    <span>2023 — 2025</span>
+                    <!-- Senior High School -->
+                    <div class="timeline-item">
 
-                    <h3>
-                        Senior High School
-                    </h3>
+                        <div class="timeline-dot">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
 
-                    <p>
-                        De La Salle John Bosco College
-                    </p>
+                        <div class="timeline-card">
 
-                </article>
+                            <span class="timeline-year">
+                                2023 – 2025
+                            </span>
 
+                            <h3>
+                                De La Salle John Bosco College
+                            </h3>
 
-                <article class="current">
+                            <p>
+                                Senior High School
+                            </p>
 
-                    <span>2025 — Present</span>
+                        </div>
 
-                    <h3>
-                        BS Information Technology
-                    </h3>
+                    </div>
 
-                    <p>
-                        De La Salle John Bosco College
-                    </p>
 
-                </article>
+                    <!-- College -->
+                    <div class="timeline-item">
 
-            </div>
+                        <div class="timeline-dot">
+                            <i class="fas fa-university"></i>
+                        </div>
 
-        </section>
+                        <div class="timeline-card current">
 
+                            <span class="timeline-year">
+                                Present
+                            </span>
 
-        <!-- ================= SKILLS SECTION ================= -->
+                            <h3>
+                                De La Salle John Bosco College
+                            </h3>
 
-        <section id="skills" class="section dark-section">
+                            <p>
+                                Bachelor of Science in Information Technology
+                            </p>
 
-            <div class="section-label">
-                03 / SKILLS
-            </div>
+                            <span class="current-badge">
+                                Currently Studying
+                            </span>
 
-            <h2>
-                Tools for turning ideas<br>
-                <span>into solutions.</span>
-            </h2>
+                        </div>
 
+                    </div>
 
-            <div class="skill-grid">
 
-
-                <article>
-
-                    <b>01</b>
-
-                    <h3>
-                        Web Development
-                    </h3>
-
-                    <p>
-                        HTML5, CSS3, responsive layouts,
-                        and basic JavaScript.
-                    </p>
-
-                </article>
-
-
-                <article>
-
-                    <b>02</b>
-
-                    <h3>
-                        Programming
-                    </h3>
-
-                    <p>
-                        Java programming, object-oriented concepts,
-                        logic design, and problem solving.
-                    </p>
-
-                </article>
-
-
-                <article>
-
-                    <b>03</b>
-
-                    <h3>
-                        Productivity
-                    </h3>
-
-                    <p>
-                        Microsoft Word, Excel, PowerPoint,
-                        and structured documentation.
-                    </p>
-
-                </article>
-
-
-                <article>
-
-                    <b>04</b>
-
-                    <h3>
-                        Collaboration
-                    </h3>
-
-                    <p>
-                        Clear communication, teamwork,
-                        milestone planning, and debugging.
-                    </p>
-
-                </article>
-
+                </div>
 
             </div>
 
         </section>
 
+
+        <!-- =========================================
+             SKILLS SECTION
+             ========================================= -->
+
+        <section id="skills" class="skills-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="section-label">WHAT I CAN DO</p>
+
+                    <h2>My <span>Skills</span></h2>
+
+                    <div class="heading-line"></div>
+
+                </div>
+
+
+                <div class="skills-intro">
+
+                    <p>
+                        These are some of the technologies and tools I am
+                        currently learning and developing through my studies
+                        and personal projects.
+                    </p>
+
+                </div>
+
+
+                <div class="skills-grid">
+
+
+                    <!-- HTML -->
+                    <div class="skill-card">
+
+                        <div class="skill-icon">
+                            <i class="fab fa-html5"></i>
+                        </div>
+
+                        <h3>HTML</h3>
+
+                        <p>
+                            Creating structured and semantic web pages.
+                        </p>
+
+                        <div class="skill-level">
+                            <span>Learning</span>
+                        </div>
+
+                    </div>
+
+
+                    <!-- CSS -->
+                    <div class="skill-card">
+
+                        <div class="skill-icon">
+                            <i class="fab fa-css3-alt"></i>
+                        </div>
+
+                        <h3>CSS</h3>
+
+                        <p>
+                            Designing responsive and attractive websites.
+                        </p>
+
+                        <div class="skill-level">
+                            <span>Learning</span>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Java -->
+                    <div class="skill-card">
+
+                        <div class="skill-icon">
+                            <i class="fab fa-java"></i>
+                        </div>
+
+                        <h3>Java</h3>
+
+                        <p>
+                            Learning object-oriented programming concepts.
+                        </p>
+
+                        <div class="skill-level">
+                            <span>Beginner</span>
+                        </div>
+
+                    </div>
+
+
+                    <!-- GitHub -->
+                    <div class="skill-card">
+
+                        <div class="skill-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+
+                        <h3>GitHub</h3>
+
+                        <p>
+                            Managing and publishing personal projects.
+                        </p>
+
+                        <div class="skill-level">
+                            <span>Learning</span>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Problem Solving -->
+                    <div class="skill-card">
+
+                        <div class="skill-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+
+                        <h3>Problem Solving</h3>
+
+                        <p>
+                            Developing logical thinking and programming
+                            solutions.
+                        </p>
+
+                        <div class="skill-level">
+                            <span>Developing</span>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Web Development -->
+                    <div class="skill-card">
+
+                        <div class="skill-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+
+                        <h3>Web Development</h3>
+
+                        <p>
+                            Building responsive and user-friendly websites.
+                        </p>
+
+                        <div class="skill-level">
+                            <span>Developing</span>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            </section>
 
         <!-- ================= PROJECTS SECTION ================= -->
 
-        <section id="projects" class="section">
+<section class="projects-section" id="projects">
 
-            <div class="section-label">
-                04 / SELECTED PROJECTS
-            </div>
+    <div class="container">
 
-            <h2>
-                Things I've worked on
-            </h2>
+        <div class="section-heading">
+            <span class="section-label">MY WORK</span>
 
+            <h2>Featured Projects</h2>
 
-            <div class="project-grid">
-
-
-                <article class="project-card">
-
-                    <span>01 · WEB</span>
-
-                    <h3>
-                        Developer Portfolio Workspace
-                    </h3>
-
-                    <p>
-                        A responsive personal portfolio designed to present
-                        academic milestones, skills, and projects.
-                    </p>
-
-                    <small>
-                        HTML · CSS · JavaScript
-                    </small>
-
-                </article>
-
-
-                <article class="project-card">
-
-                    <span>02 · JAVA</span>
-
-                    <h3>
-                        Academic Management App
-                    </h3>
-
-                    <p>
-                        A school portal simulation for student records,
-                        GPA computations, and enrollment profiles.
-                    </p>
-
-                    <small>
-                        Java SE · Logic Design
-                    </small>
-
-                </article>
-
-
-                <article class="project-card">
-
-                    <span>03 · UI/UX</span>
-
-                    <h3>
-                        Corporate Landing Platform
-                    </h3>
-
-                    <p>
-                        A product showcase interface focused on clear
-                        navigation, responsive columns, and usability.
-                    </p>
-
-                    <small>
-                        CSS · Flexbox · UX
-                    </small>
-
-                </article>
-
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= CONTACT SECTION ================= -->
-
-        <section id="contact" class="section contact">
-
-            <div class="section-label">
-                05 / CONTACT
-            </div>
-
-            <h2>
-                Have an idea?<br>
-                <span>Let's talk.</span>
-            </h2>
+            <div class="heading-line"></div>
 
             <p>
-                I'm always open to learning, collaborating,
-                and discussing technology.
+                Here are some of the projects I have created while learning
+                Information Technology and web development.
+            </p>
+        </div>
+
+
+        <div class="projects-grid">
+
+
+            <!-- PROJECT 1 -->
+
+            <article class="project-card">
+
+                <div class="project-icon">
+                    <i class="fas fa-file-certificate"></i>
+                </div>
+
+                <div class="project-content">
+
+                    <span class="project-number">01</span>
+
+                    <h3>
+                        Automated Transcript and Credential Retrieval System
+                    </h3>
+
+                    <p>
+                        A web-based prototype designed to help students request
+                        transcripts, diplomas, good moral certificates, and
+                        other school credentials online.
+                    </p>
+
+                    <div class="project-tags">
+
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>GitHub</span>
+
+                    </div>
+
+                    <a href="#" class="project-link">
+                        View Project
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PROJECT 2 -->
+
+            <article class="project-card">
+
+                <div class="project-icon">
+                    <i class="fas fa-mobile-screen-button"></i>
+                </div>
+
+                <div class="project-content">
+
+                    <span class="project-number">02</span>
+
+                    <h3>
+                        Mobile Portfolio Website
+                    </h3>
+
+                    <p>
+                        A responsive personal portfolio website that presents
+                        my profile, education, skills, projects, and contact
+                        information in a mobile-friendly design.
+                    </p>
+
+                    <div class="project-tags">
+
+                        <span>Responsive Design</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+
+                    </div>
+
+                    <a href="#" class="project-link">
+                        View Project
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PROJECT 3 -->
+
+            <article class="project-card">
+
+                <div class="project-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+
+                <div class="project-content">
+
+                    <span class="project-number">03</span>
+
+                    <h3>
+                        Future Web Development Projects
+                    </h3>
+
+                    <p>
+                        More projects will be added as I continue developing
+                        my programming, problem-solving, and software
+                        development skills.
+                    </p>
+
+                    <div class="project-tags">
+
+                        <span>Java</span>
+                        <span>Programming</span>
+                        <span>Problem Solving</span>
+
+                    </div>
+
+                    <a href="#contact" class="project-link">
+                        Contact Me
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CONTACT SECTION ================= -->
+
+<section class="contact-section" id="contact">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">GET IN TOUCH</span>
+
+            <h2>Let's Connect</h2>
+
+            <div class="heading-line"></div>
+
+            <p>
+                Feel free to send me a message. I would be happy to connect,
+                discuss ideas, or talk about future projects.
             </p>
 
-
-            <div class="contact-layout">
-
-
-                <!-- MESSAGE FORM -->
-
-                <form class="message-form"
-                    action="https://formsubmit.co/vasquezrayvengabriel@gmail.com"
-                    method="POST">
-
-                    <!-- FormSubmit Settings -->
-
-                    <input type="hidden"
-                        name="_subject"
-                        value="New Portfolio Message">
-
-                    <input type="hidden"
-                        name="_captcha"
-                        value="false">
-
-                    <input type="hidden"
-                        name="_template"
-                        value="table">
+        </div>
 
 
-                    <label for="name">
-                        Your Name
-                    </label>
-
-                    <input type="text"
-                        id="name"
-                        name="name"
-                        placeholder="Enter your name"
-                        required>
+        <div class="contact-grid">
 
 
-                    <label for="email">
-                        Your Email
-                    </label>
+            <!-- CONTACT INFORMATION -->
 
-                    <input type="email"
-                        id="email"
-                        name="email"
-                        placeholder="you@example.com"
-                        required>
+            <div class="contact-info">
 
+                <h3>Contact Information</h3>
 
-                    <label for="message">
-                        Message
-                    </label>
-
-                    <textarea id="message"
-                        name="message"
-                        rows="6"
-                        placeholder="Write your message here..."
-                        required></textarea>
+                <p>
+                    You can reach me through my social media accounts or send
+                    me a message using the contact form.
+                </p>
 
 
-                    <button class="btn btn-gold" type="submit">
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+
+                    <div>
+                        <span>Name</span>
+                        <strong>Rayven Gabriel Vasquez</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+
+                    <div>
+                        <span>Program</span>
+                        <strong>BS Information Technology - 1st Year</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+
+                    <div>
+                        <span>Career Goal</span>
+                        <strong>Aspiring Software Developer</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-socials">
+
+                    <h4>Follow Me</h4>
+
+                    <div class="social-links">
+
+                        <!-- Replace these links with your actual profile URLs -->
+
+                        <a href="https://www.facebook.com/"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="Facebook">
+
+                            <i class="fab fa-facebook-f"></i>
+
+                        </a>
+
+
+                        <a href="https://www.instagram.com/"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="Instagram">
+
+                            <i class="fab fa-instagram"></i>
+
+                        </a>
+
+
+                        <a href="https://www.linkedin.com/"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="LinkedIn">
+
+                            <i class="fab fa-linkedin-in"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- MESSAGE FORM -->
+
+            <div class="contact-form-container">
+
+                <form id="messageForm" class="contact-form">
+
+                    <div class="form-group">
+
+                        <label for="name">Full Name</label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your full name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">Email Address</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email address"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="message">Your Message</label>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="6"
+                            placeholder="Write your message here..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary">
+
+                        <i class="fas fa-paper-plane"></i>
+
                         Send Message
+
                     </button>
 
                 </form>
 
+            </div>
 
-                <!-- CONTACT INFORMATION -->
+        </div>
 
-                <div class="contact-details">
+    </div>
 
-                    <div class="contact-links">
-
-                        <a href="mailto:vasquezrayvengabriel@gmail.com">
-                            vasquezrayvengabriel@gmail.com
-                        </a>
-
-                        <a href="tel:09123241441">
-                            0912 324 1441
-                        </a>
-
-                    </div>
+</section>
 
 
-                    <!-- SOCIAL MEDIA LINKS -->
-
-                    <div class="social-links">
-
-                        <a href="https://www.facebook.com/rayvengabriel.vasquez"
-                            target="_blank"
-                            rel="noopener noreferrer">
-
-                            Facebook
-
-                        </a>
+</main>
 
 
-                        <a href="https://www.instagram.com/rayvengabrielvasquez"
-                            target="_blank"
-                            rel="noopener noreferrer">
+<!-- ================= FOOTER ================= -->
 
-                            Instagram
+<footer class="site-footer">
 
-                        </a>
+    <div class="container">
 
+        <div class="footer-content">
 
-                        <a href="https://www.linkedin.com/in/rayven-gabriel-vasquez"
-                            target="_blank"
-                            rel="noopener noreferrer">
+            <div class="footer-brand">
 
-                            LinkedIn
+                <h3>Rayven Gabriel Vasquez</h3>
 
-                        </a>
-
-                    </div>
-
-
-                    <p class="social-note">
-
-                        Search for <strong>Rayven Gabriel Vasquez</strong>
-                        on each platform if your username is different.
-
-                    </p>
-
-                </div>
+                <p>
+                    BS Information Technology Student | Aspiring Software Developer
+                </p>
 
             </div>
 
-        </section>
 
-    </main>
+            <div class="footer-socials">
 
+                <a href="https://www.facebook.com/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Facebook">
 
-    <!-- ================= FOOTER ================= -->
+                    <i class="fab fa-facebook-f"></i>
 
-    <footer>
-
-        <p>
-            © 2026 Rayven Gabriel G. Vasquez
-        </p>
-
-        <p>
-            Designed & Built with Curiosity.
-        </p>
-
-    </footer>
+                </a>
 
 
-    <!-- JAVASCRIPT -->
+                <a href="https://www.instagram.com/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Instagram">
 
-    
+                    <i class="fab fa-instagram"></i>
+
+                </a>
+
+
+                <a href="https://www.linkedin.com/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="LinkedIn">
+
+                    <i class="fab fa-linkedin-in"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                &copy; <span id="currentYear"></span>
+                Rayven Gabriel Vasquez. All Rights Reserved.
+            </p>
+
+            <p>
+                Curiosity leads to Capability.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- ================= SCROLL TO TOP BUTTON ================= -->
+
+<button id="scrollTop" class="scroll-top" aria-label="Scroll to top">
+
+    <i class="fas fa-arrow-up"></i>
+
+</button>
+
+
 <script src="script.js"></script>
-</body>
-</html>
+
 </body>
 
-  </html>
+                        </html>
+
+            

@@ -1,446 +1,446 @@
-/* =========================================
+/* =========================================================
+   MOBILE PORTFOLIO WEBSITE
    RAYVEN GABRIEL VASQUEZ
-   MOBILE PORTFOLIO - JAVASCRIPT
-   ========================================= */
+   SCRIPT.JS
+   ========================================================= */
 
 
-/* =========================================
-   HAMBURGER NAVIGATION
-   ========================================= */
+/* =========================================================
+   WAIT UNTIL PAGE IS LOADED
+   ========================================================= */
 
-const menuToggle = document.getElementById("menuToggle");
-const navMenu = document.getElementById("navMenu");
+document.addEventListener("DOMContentLoaded", function () {
 
-if (menuToggle && navMenu) {
 
-    menuToggle.addEventListener("click", function () {
+    /* =====================================================
+       MOBILE HAMBURGER MENU
+       ===================================================== */
 
-        navMenu.classList.toggle("active");
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
 
-        menuToggle.classList.toggle("active");
+    if (menuToggle && navMenu) {
 
-    });
+        menuToggle.addEventListener("click", function () {
 
-}
+            navMenu.classList.toggle("open");
 
+            const isOpen = navMenu.classList.contains("open");
 
-/* =========================================
-   CLOSE MOBILE MENU WHEN LINK IS CLICKED
-   ========================================= */
-
-const navLinks = document.querySelectorAll("#navMenu a");
-
-navLinks.forEach(function (link) {
-
-    link.addEventListener("click", function () {
-
-        if (navMenu) {
-            navMenu.classList.remove("active");
-        }
-
-        if (menuToggle) {
-            menuToggle.classList.remove("active");
-        }
-
-    });
-
-});
-
-
-/* =========================================
-   SMOOTH SCROLLING
-   ========================================= */
-
-document.querySelectorAll('a[href^="#"]').forEach(function (link) {
-
-    link.addEventListener("click", function (event) {
-
-        const targetId = this.getAttribute("href");
-
-        if (targetId === "#" || targetId === "") {
-            return;
-        }
-
-        const target = document.querySelector(targetId);
-
-        if (target) {
-
-            event.preventDefault();
-
-            target.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-
-        }
-
-    });
-
-});
-
-
-/* =========================================
-   ACTIVE NAVIGATION LINK
-   ========================================= */
-
-const sections = document.querySelectorAll("section[id]");
-
-window.addEventListener("scroll", function () {
-
-    let currentSection = "";
-
-    sections.forEach(function (section) {
-
-        const sectionTop = section.offsetTop - 150;
-        const sectionHeight = section.offsetHeight;
-
-        if (
-            window.scrollY >= sectionTop &&
-            window.scrollY < sectionTop + sectionHeight
-        ) {
-            currentSection = section.getAttribute("id");
-        }
-
-    });
-
-    navLinks.forEach(function (link) {
-
-        link.classList.remove("active");
-
-        if (
-            link.getAttribute("href") === "#" + currentSection
-        ) {
-            link.classList.add("active");
-        }
-
-    });
-
-});
-
-
-/* =========================================
-   CONTACT / MESSAGE FORM
-   ========================================= */
-
-const messageForm = document.getElementById("messageForm");
-
-if (messageForm) {
-
-    messageForm.addEventListener("submit", function (event) {
-
-        event.preventDefault();
-
-        const name = document.getElementById("name");
-        const email = document.getElementById("email");
-        const message = document.getElementById("message");
-
-        if (!name || !email || !message) {
-            return;
-        }
-
-        const nameValue = name.value.trim();
-        const emailValue = email.value.trim();
-        const messageValue = message.value.trim();
-
-        if (
-            nameValue === "" ||
-            emailValue === "" ||
-            messageValue === ""
-        ) {
-
-            alert("Please complete all fields before sending your message.");
-
-            return;
-
-        }
-
-
-        /* Basic email validation */
-
-        const emailPattern =
-            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-        if (!emailPattern.test(emailValue)) {
-
-            alert("Please enter a valid email address.");
-
-            return;
-
-        }
-
-
-        /*
-         * Opens the user's email application.
-         * Replace the email address below with
-         * your actual email address.
-         */
-
-        const receiverEmail = "your-email@example.com";
-
-        const subject =
-            encodeURIComponent(
-                "Portfolio Message from " + nameValue
+            menuToggle.setAttribute(
+                "aria-expanded",
+                isOpen ? "true" : "false"
             );
 
-        const body =
-            encodeURIComponent(
-                "Name: " + nameValue +
-                "\nEmail: " + emailValue +
-                "\n\nMessage:\n" + messageValue
-            );
+            /* Change hamburger icon */
 
-        window.location.href =
-            "mailto:" +
-            receiverEmail +
-            "?subject=" +
-            subject +
-            "&body=" +
-            body;
+            const icon = menuToggle.querySelector("i");
 
+            if (icon) {
 
-        /* Clear the form */
-
-        messageForm.reset();
-
-    });
-
-}
-
-
-/* =========================================
-   CURRENT YEAR
-   ========================================= */
-
-const currentYear = document.getElementById("currentYear");
-
-if (currentYear) {
-
-    currentYear.textContent =
-        new Date().getFullYear();
-
-}
-
-
-/* =========================================
-   SCROLL-TO-TOP BUTTON
-   ========================================= */
-
-const scrollTopButton =
-    document.getElementById("scrollTop");
-
-if (scrollTopButton) {
-
-    window.addEventListener("scroll", function () {
-
-        if (window.scrollY > 400) {
-
-            scrollTopButton.classList.add("show");
-
-        } else {
-
-            scrollTopButton.classList.remove("show");
-
-        }
-
-    });
-
-
-    scrollTopButton.addEventListener("click", function () {
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
-    });
-
-}
-
-
-/* =========================================
-   FADE-IN ANIMATION
-   ========================================= */
-
-const animatedElements =
-    document.querySelectorAll(".fade-in");
-
-if (animatedElements.length > 0) {
-
-    const observer =
-        new IntersectionObserver(
-            function (entries) {
-
-                entries.forEach(function (entry) {
-
-                    if (entry.isIntersecting) {
-
-                        entry.target.classList.add("visible");
-
-                        observer.unobserve(entry.target);
-
-                    }
-
-                });
-
-            },
-            {
-                threshold: 0.15
-            }
-        );
-
-
-    animatedElements.forEach(function (element) {
-
-        observer.observe(element);
-
-    });
-
-}
-
-
-/* =========================================
-   TYPING EFFECT
-   ========================================= */
-
-const typingText =
-    document.getElementById("typingText");
-
-if (typingText) {
-
-    const words = [
-        "Future Software Developer",
-        "BS Information Technology Student",
-        "Web Developer",
-        "Technology Enthusiast"
-    ];
-
-    let wordIndex = 0;
-    let characterIndex = 0;
-    let deleting = false;
-
-
-    function typeEffect() {
-
-        const currentWord =
-            words[wordIndex];
-
-
-        if (!deleting) {
-
-            typingText.textContent =
-                currentWord.substring(
-                    0,
-                    characterIndex + 1
-                );
-
-            characterIndex++;
-
-
-            if (
-                characterIndex ===
-                currentWord.length
-            ) {
-
-                deleting = true;
-
-                setTimeout(
-                    typeEffect,
-                    1500
-                );
-
-                return;
-
-            }
-
-        } else {
-
-            typingText.textContent =
-                currentWord.substring(
-                    0,
-                    characterIndex - 1
-                );
-
-            characterIndex--;
-
-
-            if (characterIndex === 0) {
-
-                deleting = false;
-
-                wordIndex++;
-
-                if (
-                    wordIndex >=
-                    words.length
-                ) {
-
-                    wordIndex = 0;
-
+                if (isOpen) {
+                    icon.classList.remove("fa-bars");
+                    icon.classList.add("fa-xmark");
+                } else {
+                    icon.classList.remove("fa-xmark");
+                    icon.classList.add("fa-bars");
                 }
 
             }
 
-        }
+        });
 
 
-        const speed =
-            deleting ? 60 : 100;
+        /* =================================================
+           CLOSE MOBILE MENU AFTER CLICKING A LINK
+           ================================================= */
 
-        setTimeout(
-            typeEffect,
-            speed
-        );
+        const navLinks = navMenu.querySelectorAll("a");
+
+        navLinks.forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                navMenu.classList.remove("open");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                const icon = menuToggle.querySelector("i");
+
+                if (icon) {
+                    icon.classList.remove("fa-xmark");
+                    icon.classList.add("fa-bars");
+                }
+
+            });
+
+        });
 
     }
 
 
-    typeEffect();
+    /* =====================================================
+       CURRENT YEAR
+       ===================================================== */
 
-}
+    const currentYear = document.getElementById("currentYear");
+
+    if (currentYear) {
+        currentYear.textContent = new Date().getFullYear();
+    }
 
 
-/* =========================================
-   PREVENT EMPTY SOCIAL LINKS
-   ========================================= */
+    /* =====================================================
+       SCROLL TO TOP BUTTON
+       ===================================================== */
 
-const socialLinks =
-    document.querySelectorAll(".social-links a");
+    const scrollTop = document.getElementById("scrollTop");
 
-socialLinks.forEach(function (link) {
+    if (scrollTop) {
 
-    link.addEventListener("click", function (event) {
+        window.addEventListener("scroll", function () {
 
-        const href =
-            link.getAttribute("href");
+            if (window.scrollY > 350) {
 
-        if (
-            !href ||
-            href === "#" ||
-            href === "javascript:void(0)"
-        ) {
+                scrollTop.classList.add("show");
+
+            } else {
+
+                scrollTop.classList.remove("show");
+
+            }
+
+        });
+
+
+        scrollTop.addEventListener("click", function () {
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        });
+
+    }
+
+
+    /* =====================================================
+       MESSAGE FORM
+       ===================================================== */
+
+    const messageForm = document.getElementById("messageForm");
+    const formStatus = document.getElementById("formStatus");
+
+    if (messageForm) {
+
+        messageForm.addEventListener("submit", function (event) {
 
             event.preventDefault();
 
-            alert(
-                "Social media link will be added soon."
-            );
+
+            /* ---------------------------------------------
+               GET FORM VALUES
+               --------------------------------------------- */
+
+            const nameField = document.getElementById("name");
+            const emailField = document.getElementById("email");
+            const subjectField = document.getElementById("subject");
+            const messageField = document.getElementById("message");
+
+
+            const name = nameField
+                ? nameField.value.trim()
+                : "";
+
+            const email = emailField
+                ? emailField.value.trim()
+                : "";
+
+            const subject = subjectField
+                ? subjectField.value.trim()
+                : "";
+
+            const message = messageField
+                ? messageField.value.trim()
+                : "";
+
+
+            /* ---------------------------------------------
+               CHECK REQUIRED FIELDS
+               --------------------------------------------- */
+
+            if (
+                name === "" ||
+                email === "" ||
+                subject === "" ||
+                message === ""
+            ) {
+
+                if (formStatus) {
+
+                    formStatus.textContent =
+                        "Please complete all fields before sending.";
+
+                    formStatus.classList.remove("success");
+                    formStatus.classList.add("error");
+
+                }
+
+                return;
+            }
+
+
+            /* ---------------------------------------------
+               BASIC EMAIL VALIDATION
+               --------------------------------------------- */
+
+            const emailPattern =
+                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailPattern.test(email)) {
+
+                if (formStatus) {
+
+                    formStatus.textContent =
+                        "Please enter a valid email address.";
+
+                    formStatus.classList.remove("success");
+                    formStatus.classList.add("error");
+
+                }
+
+                return;
+            }
+
+
+            /* ---------------------------------------------
+               SUCCESS MESSAGE
+               --------------------------------------------- */
+
+            if (formStatus) {
+
+                formStatus.textContent =
+                    "Thank you! Your message has been prepared successfully.";
+
+                formStatus.classList.remove("error");
+                formStatus.classList.add("success");
+
+            }
+
+
+            /* ---------------------------------------------
+               CREATE EMAIL MESSAGE
+               --------------------------------------------- */
+
+            const recipient =
+                "rayvengabrielvasquez@gmail.com";
+
+
+            const emailSubject =
+                encodeURIComponent(subject);
+
+
+            const emailBody =
+                encodeURIComponent(
+                    "Name: " + name +
+                    "\nEmail: " + email +
+                    "\n\nMessage:\n" + message
+                );
+
+
+            /*
+             * Open the user's email application.
+             */
+
+            const mailtoLink =
+                "mailto:" +
+                recipient +
+                "?subject=" +
+                emailSubject +
+                "&body=" +
+                emailBody;
+
+
+            window.location.href = mailtoLink;
+
+
+            /* ---------------------------------------------
+               RESET FORM
+               --------------------------------------------- */
+
+            setTimeout(function () {
+
+                messageForm.reset();
+
+            }, 500);
+
+        });
+
+    }
+
+
+    /* =====================================================
+       SET ACTIVE NAVIGATION LINK
+       ===================================================== */
+
+    const currentPage =
+        window.location.pathname
+            .split("/")
+            .pop();
+
+
+    const navigationLinks =
+        document.querySelectorAll(".main-nav a");
+
+
+    navigationLinks.forEach(function (link) {
+
+        const linkPage =
+            link.getAttribute("href");
+
+
+        if (
+            linkPage === currentPage ||
+            (
+                currentPage === "" &&
+                linkPage === "index.html"
+            )
+        ) {
+
+            link.classList.add("active");
+
+        } else {
+
+            link.classList.remove("active");
 
         }
 
     });
 
-});
+
+    /* =====================================================
+       IMAGE ERROR HANDLING
+       ===================================================== */
+
+    const profileImages =
+        document.querySelectorAll(
+            ".profile-image-box img, .about-image-wrapper img"
+        );
 
 
-/* =========================================
-   PAGE LOADED
-   ========================================= */
+    profileImages.forEach(function (image) {
 
-document.addEventListener(
-    "DOMContentLoaded",
-    function () {
+        image.addEventListener("error", function () {
 
-        document.body.classList.add("loaded");
+            image.style.display = "none";
+
+        });
+
+    });
+
+
+    /* =====================================================
+       SMOOTH INTERNAL LINKS
+       ===================================================== */
+
+    const internalLinks =
+        document.querySelectorAll('a[href^="#"]');
+
+
+    internalLinks.forEach(function (link) {
+
+        link.addEventListener("click", function (event) {
+
+            const targetID =
+                link.getAttribute("href");
+
+
+            if (
+                !targetID ||
+                targetID === "#"
+            ) {
+                return;
+            }
+
+
+            const target =
+                document.querySelector(targetID);
+
+
+            if (target) {
+
+                event.preventDefault();
+
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            }
+
+        });
+
+    });
+
+
+    /* =====================================================
+       SIMPLE CARD REVEAL
+       ===================================================== */
+
+    const revealElements =
+        document.querySelectorAll(
+            ".portal-card, " +
+            ".quick-info-card, " +
+            ".vision-card, " +
+            ".value-card, " +
+            ".education-card, " +
+            ".skill-card, " +
+            ".learning-card, " +
+            ".project-card, " +
+            ".social-card"
+        );
+
+
+    if ("IntersectionObserver" in window) {
+
+        const revealObserver =
+            new IntersectionObserver(
+                function (entries, observer) {
+
+                    entries.forEach(function (entry) {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add(
+                                "visible"
+                            );
+
+                            observer.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        revealElements.forEach(function (element) {
+
+            revealObserver.observe(element);
+
+        });
 
     }
-);
+
+
+});
